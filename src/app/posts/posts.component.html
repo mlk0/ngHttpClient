@@ -1,0 +1,27 @@
+<p>
+  Bare Min Posts works!
+</p>
+<a [routerLink]="['/welcome']">Home</a>
+<div *ngIf="posts$ | async; let p; else loading">
+  Bare Min
+  <ul>
+    <li>loading the posts with get, no casting to a specific model, no error handling, no processing of any headers</li>
+    <li>use of the async pipe removes the necessity to subscribe to the observable</li>
+  </ul>
+  This can be useful if the response contains the exact structure as the one needed to be loaded into the component
+  <pre>
+    {{ p | json }}
+  </pre>
+
+
+</div>
+
+<ng-template #loading>
+  
+    Loading ...   <fa name="cog" animation="spin"></fa>
+  
+
+</ng-template>
+
+
+<!-- {{posts | json}} -->
