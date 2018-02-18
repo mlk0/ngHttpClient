@@ -2,6 +2,16 @@
   Bare Min Posts works!
 </p>
 <a [routerLink]="['/welcome']">Home</a>
+
+<div>
+
+<button (click)="getPostsIdAndTitle()">Get Post IDs and Titles</button>
+<p>
+initiate read of a result from the server, no casting but assuming that is an array of json objects and them iterating over each of them and accessing specific properties in order to form an array of objects that only have ID and Title properties and that one is bound to the template
+</p>
+<pre>{{postsIDsandTitles | json }}</pre>
+
+</div>
 <div *ngIf="posts$ | async; let p; else loading">
   Bare Min
   <ul>
