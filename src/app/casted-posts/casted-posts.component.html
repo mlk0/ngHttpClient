@@ -1,0 +1,44 @@
+<p>
+</p>
+
+
+<div>
+  <button (click)="getCastedPosts()">Get Casted Posts</button>
+  <button (click)="getCastedPostsX()">Get Casted Posts X</button>
+  <p>
+    sample where the response is
+    "<b>casted</b> to an interface that matches the response.
+  </p>
+  <i class="fa fa-exclamation"></i>
+ 
+  <pre>
+    Despite the fact that the response from get is casted
+    into IPost, listing of the items in this view will be
+    exactly the same as the original objects.
+    So, if for example the IPost is modified and instead the field 
+    "id" it is renamed to "Identifier" the expected behavior that
+    the casting is failing will not happen. No error will be raised
+    and the original result will be listed again as if no casting happened at all.
+    
+    This is happening since the "casting" to IPost is not actually casting.
+    This is only to indicate that the response is being expected as an array of IPost object.
+    
+    Since there is no additional processing of the "casted" result but the result is displayed
+    directly on the template, there is no assertion at any point if this is really an array
+    of instances of IPost. 
+    
+    
+  </pre>
+  
+  <div *ngIf='!isLoading else loadingPosts'>
+    <pre>{{posts | json}}</pre>
+    <pre>{{postsX | json}}</pre>
+  </div>
+
+</div>
+
+<ng-template #loadingPosts>
+  Loading Posts or PostX...
+  <!-- <i class="fa fa-cog fa-spin"></i> -->
+  <i class="fa fa-refresh fa-spin"></i>
+</ng-template>

@@ -5,13 +5,22 @@
 
 <div>
 
-<button (click)="getPostsIdAndTitle()">Get Post IDs and Titles</button>
-<p>
-initiate read of a result from the server, no casting but assuming that is an array of json objects and them iterating over each of them and accessing specific properties in order to form an array of objects that only have ID and Title properties and that one is bound to the template
-</p>
-<pre>{{postsIDsandTitles | json }}</pre>
+  <button (click)="getPostsIdAndTitle()">Get Post IDs and Titles</button>
+  <div>
+    <p>
+      initiate read of a result from the server without casting of the response.
+    </p>
+    <p>
+      The server responded with an anonymous Object type but it is assumed that the response is an array of json objects and then
+      iterating over each of them and accessing specific properties with the bracket notation in order to form an array of
+      objects that only have ID and Title properties before binding that new array
+    </p>
+  </div>
+  <pre>{{postsIDsandTitles | json }}</pre>
 
 </div>
+
+<!-- using ngIf with an async pipe to manage a single subscription to an observable -->
 <div *ngIf="posts$ | async; let p; else loading">
   Bare Min
   <ul>
@@ -22,16 +31,9 @@ initiate read of a result from the server, no casting but assuming that is an ar
   <pre>
     {{ p | json }}
   </pre>
-
-
 </div>
 
 <ng-template #loading>
-  
-    Loading ...   <fa name="cog" animation="spin"></fa>
-  
-
+  Loading ...
+  <i class="fa fa-spinner fa-pulse"></i>
 </ng-template>
-
-
-<!-- {{posts | json}} -->

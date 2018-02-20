@@ -16,7 +16,9 @@ export class PostsComponent implements OnInit, OnDestroy {
 
   postSubscription: Subscription;
   ngOnDestroy(): void {
-    this.postSubscription.unsubscribe();
+
+    if(this.postSubscription)
+      this.postSubscription.unsubscribe();
   }
   posts$: Observable<any>;
 
