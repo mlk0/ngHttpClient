@@ -23,10 +23,10 @@ export class CastedPostsComponent implements OnInit {
 
   getCastedPosts() {
     this.isLoading = true;
-    this.jsonService.getCastedPosts().pipe(delay(3000))
+    this.jsonService.getPostsTyped().pipe(delay(3000))
     
     .subscribe(p => {
-    this.posts = [...p]
+    this.posts = [...p]  //usage of the spread operator to clone the array
       this.isLoading = false;
     }
 
@@ -37,7 +37,7 @@ export class CastedPostsComponent implements OnInit {
   getCastedPostsX(){
     this.isLoading = true;
 
-    this.jsonService.getCastedPostsX().subscribe(
+    this.jsonService.getPostsTypedX().subscribe(
       r=>{
         this.isLoading = false;
         this.postsX = r;

@@ -1,0 +1,43 @@
+<p>
+  full-response-posts works!
+</p>
+<button (click)='getPostsFullTyped()'>Get Posts Typed and Full Response</button>
+
+<button (click)='getPostsFullTypedReadHeadersStatusAndBody()'>Get Posts and read status, headers and body</button>
+
+
+
+{{"{ observe : 'response' }"}}
+ 
+<pre>
+  By passing the second parameter in the get method
+  instead of getting only the body the full response is returned.
+  The default value of "observe" is body and therefore if not specified only the body is returned
+</pre>
+<pre *ngIf="postSubscription$ | async else fullResponse">
+  {{postSubscription$ | async | json}}
+</pre>
+
+<div>
+  <p>
+  Response Status Code : {{responseStatusCode}}    
+  </p>
+  <p>headers : </p>
+  <ul>
+    <li *ngFor="let header of headerKeysWithValues" >
+        key : {{header.key}} - value : {{header.value}}
+    </li>
+  </ul>
+  <div>
+    response body 
+    <pre> {{ responseBody | json}} </pre>
+  </div>
+</div>
+
+
+
+<ng-template #fullResponse>
+  #Full Get Posts Response Placeholder#
+</ng-template>
+
+

@@ -27,6 +27,11 @@
     directly on the template, there is no assertion at any point if this is really an array
     of instances of IPost. 
     
+    In this example, the "Get Casted Posts X" will issue the same call
+    to retrieve all the posts as in the case of "Get Casted Posts" but now
+    the service call is "casted" to IPostX array. 
+    The IPostX has renamed "id" with "Identifier" and does not have the "userId".
+    No exception is being raised and as in the first case the original response is listed.
     
   </pre>
   

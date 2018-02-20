@@ -11,18 +11,21 @@ import { PostsComponent } from './posts/posts.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { JsonPlaceHoldService } from './services/json-place-hold.service';
 import { CastedPostsComponent } from './casted-posts/casted-posts.component';
+import { FullResponsePostsComponent } from './full-response-posts/full-response-posts.component';
 @NgModule({
   declarations: [
     AppComponent,
     PostsComponent,
     WelcomeComponent,
-    CastedPostsComponent
+    CastedPostsComponent,
+    FullResponsePostsComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot([
       { path : 'posts', component : PostsComponent },
       { path : 'casted-posts', component : CastedPostsComponent },
+      { path : 'full-response-posts', component : FullResponsePostsComponent }
       { path : 'welcome', component : WelcomeComponent },
       { path : '', redirectTo : 'welcome', pathMatch : 'full' },
       { path : '**', redirectTo : 'welcome', pathMatch : 'full' }
