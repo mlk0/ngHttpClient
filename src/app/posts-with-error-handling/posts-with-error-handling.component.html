@@ -1,0 +1,13 @@
+<p>
+  posts-with-error-handling works!
+</p>
+<pre>
+  the service has implementation of 'handleErrors(error : HttpErrorResponse)' method.
+  after get, the response is piped through catchError(this.handleErrors)
+
+get(url).pipe(catchError(this.handleError))
+
+</pre>
+<button (click)="getPosts()">Get Posts</button>
+<pre>{{posts | json}}</pre>
+<pre>{{errorMessage}}</pre>
