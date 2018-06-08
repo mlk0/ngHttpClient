@@ -9,6 +9,15 @@ import { catchError } from 'rxjs/operators';
 export class JsonPlaceHoldService {
 
 
+  deletePost(postId: number): any {
+    throw new Error("Method not implemented.");
+  }
+  updatePost(arg0: any): any {
+    throw new Error("Method not implemented.");
+  }
+  createPost(arg0: any): any {
+    throw new Error("Method not implemented.");
+  }
   constructor(private httpClient: HttpClient) { }
   url: string = 'https://jsonplaceholder.typicode.com';
 
