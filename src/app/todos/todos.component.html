@@ -1,11 +1,8 @@
 <a [routerLink]="['/welcome']">Home</a>
 
-<div>
-
-  <button (click)="getTodos()">Get Todos</button>  
-  
-
-</div>
+<!-- <div>
+  <button (click)="getTodos()">Get Todos</button>
+</div> -->
 
 <!-- using ngIf with an async pipe to manage a single subscription to an observable -->
 <div *ngIf="todos$ | async; let todo; else loading">    
