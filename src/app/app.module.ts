@@ -16,6 +16,8 @@ import { PostsWithErrorHandlingComponent } from './posts-with-error-handling/pos
 import { PostCommentsComponent } from './post-comments/post-comments.component';
 import { AlbumsComponent } from './albums/albums.component';
 import { PhotosComponent } from './photos/photos.component';
+import { TodosComponent } from './todos/todos.component';
+import { UsersComponent } from './users/users.component';
 @NgModule({
    declarations: [
       AppComponent,
@@ -26,7 +28,9 @@ import { PhotosComponent } from './photos/photos.component';
       PostsWithErrorHandlingComponent,
       PostCommentsComponent,
       AlbumsComponent,
-      PhotosComponent
+      PhotosComponent,
+      TodosComponent,
+      UsersComponent
    ],
    imports: [
       BrowserModule,
@@ -34,10 +38,9 @@ import { PhotosComponent } from './photos/photos.component';
       { path : 'posts', component : PostsComponent },
       { path : 'comments', component : PostCommentsComponent },
       { path : 'photos', component : PhotosComponent },
-
-
+      { path : 'todos', component : TodosComponent },
+      { path : 'users', component : UsersComponent },
       { path : 'albums', component : AlbumsComponent },
-
       { path : 'casted-posts', component : CastedPostsComponent },
       { path : 'full-response-posts', component : FullResponsePostsComponent },
       { path : 'posts-error-handling', component : PostsWithErrorHandlingComponent},

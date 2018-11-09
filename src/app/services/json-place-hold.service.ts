@@ -6,11 +6,12 @@ import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
 import { catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
 import { PostComment } from '../models/post-comment';
-import { Album, Photo } from '../models';
+import { Album, Photo, Todo, User } from '../models';
 
 
 @Injectable()
 export class JsonPlaceHoldService {
+  
   
   constructor(private httpClient: HttpClient) { }
   url: string = 'https://jsonplaceholder.typicode.com';
@@ -115,6 +116,28 @@ export class JsonPlaceHoldService {
     let url = [this.url, 'photos'].join('/');
     
     let result = this.httpClient.get<Photo[]>(url)
+      .pipe(
+        catchError(this.handleError)
+      );
+    return result;
+  }
+
+
+  getTodos(): Observable<Todo[]> {
+    let url = [this.url, 'todos'].join('/');
+    
+    let result = this.httpClient.get<Todo[]>(url)
+      .pipe(
+        catchError(this.handleError)
+      );
+    return result;
+  }
+
+
+  getUsers(): Observable<User[]> {
+    let url = [this.url, 'users'].join('/');
+    
+    let result = this.httpClient.get<User[]>(url)
       .pipe(
         catchError(this.handleError)
       );
