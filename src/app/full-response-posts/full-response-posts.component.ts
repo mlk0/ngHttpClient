@@ -31,7 +31,7 @@ export class FullResponsePostsComponent implements OnInit {
   getPostsFullTypedReadHeadersStatusAndBody(){
     
      this.jsonService.getPostsTypedAsFullResponse().subscribe(
-       httpResponse => {
+      httpResponse => {
 
         //check the status
         this.responseStatusCode = httpResponse.status;

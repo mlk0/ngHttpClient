@@ -13,19 +13,31 @@ import { JsonPlaceHoldService } from './services/json-place-hold.service';
 import { CastedPostsComponent } from './casted-posts/casted-posts.component';
 import { FullResponsePostsComponent } from './full-response-posts/full-response-posts.component';
 import { PostsWithErrorHandlingComponent } from './posts-with-error-handling/posts-with-error-handling.component';
+import { PostCommentsComponent } from './post-comments/post-comments.component';
+import { AlbumsComponent } from './albums/albums.component';
+import { PhotosComponent } from './photos/photos.component';
 @NgModule({
-  declarations: [
-    AppComponent,
-    PostsComponent,
-    WelcomeComponent,
-    CastedPostsComponent,
-    FullResponsePostsComponent,
-    PostsWithErrorHandlingComponent
-  ],
-  imports: [
-    BrowserModule,
-    RouterModule.forRoot([
+   declarations: [
+      AppComponent,
+      PostsComponent,
+      WelcomeComponent,
+      CastedPostsComponent,
+      FullResponsePostsComponent,
+      PostsWithErrorHandlingComponent,
+      PostCommentsComponent,
+      AlbumsComponent,
+      PhotosComponent
+   ],
+   imports: [
+      BrowserModule,
+      RouterModule.forRoot([
       { path : 'posts', component : PostsComponent },
+      { path : 'comments', component : PostCommentsComponent },
+      { path : 'photos', component : PhotosComponent },
+
+
+      { path : 'albums', component : AlbumsComponent },
+
       { path : 'casted-posts', component : CastedPostsComponent },
       { path : 'full-response-posts', component : FullResponsePostsComponent },
       { path : 'posts-error-handling', component : PostsWithErrorHandlingComponent},
@@ -36,6 +48,8 @@ import { PostsWithErrorHandlingComponent } from './posts-with-error-handling/pos
     HttpClientModule
   ],
   providers: [HttpClient, JsonPlaceHoldService],
-  bootstrap: [AppComponent]
+   bootstrap: [
+      AppComponent
+   ]
 })
 export class AppModule { }

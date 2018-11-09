@@ -2,17 +2,41 @@
 <div style="text-align:center">
   <h1>
     {{ title }}! <i class="fa fa-check"></i>
-   
-    
   </h1>
 </div>
 
-<a [routerLink]="['/posts']" >Posts</a>
+<ul>
+  <li>
+    <a [routerLink]="['/posts']">Posts</a>
+  </li>
 
-<a [routerLink]="['/casted-posts']" >Casted Posts</a>
+  <li>
+    <a [routerLink]="['/casted-posts']">Casted Posts</a>
 
-<a [routerLink]="['/full-response-posts']">Full Response Posts</a>
-<a [routerLink]="['/posts-error-handling']"> Posts With Error Handling </a>
+  </li>
+
+  <li>
+    <a [routerLink]="['/full-response-posts']">Full Response Posts</a>
+
+
+  </li>
+  <li>
+    <a [routerLink]="['/posts-error-handling']"> Posts With Error Handling </a>
+  </li>
+
+  <li>
+    <a [routerLink]="['/comments']">Comments </a>
+
+  </li>
+
+  <li>
+    <a [routerLink]="['/albums']">Albums </a>
+
+  </li>
+  <li>
+    <a [routerLink]="['/photos']">Photos </a>
+
+  </li>
+</ul>
 
 <router-outlet></router-outlet>
-
