@@ -18,6 +18,8 @@ import { AlbumsComponent } from './albums/albums.component';
 import { PhotosComponent } from './photos/photos.component';
 import { TodosComponent } from './todos/todos.component';
 import { UsersComponent } from './users/users.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 @NgModule({
    declarations: [
       AppComponent,
@@ -48,7 +50,8 @@ import { UsersComponent } from './users/users.component';
       { path : '', redirectTo : 'welcome', pathMatch : 'full' },
       { path : '**', redirectTo : 'welcome', pathMatch : 'full' }
     ]),
-    HttpClientModule
+    HttpClientModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [HttpClient, JsonPlaceHoldService],
    bootstrap: [

@@ -18,15 +18,16 @@
             "polyfills": "src/polyfills.ts",
             "assets": [
               "src/assets",
-              "src/favicon.ico",              
+              "src/favicon.ico",
               {
                 "glob": "**/*",
                 "input": "node_modules/font-awesome/fonts",
                 "output": "/"
-              }
+              },
+              "src/manifest.json"
             ],
             "styles": [
-              "src/styles.css",              
+              "src/styles.css",
               "node_modules/font-awesome/css/font-awesome.css"
             ],
             "scripts": []
@@ -47,7 +48,8 @@
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.prod.ts"
                 }
-              ]
+              ],
+              "serviceWorker": true
             }
           }
         },
@@ -83,7 +85,8 @@
             "assets": [
               "src/assets",
               "src/favicon.ico",
-              "node_modules/font-awesome/fonts"
+              "node_modules/font-awesome/fonts",
+              "src/manifest.json"
             ]
           }
         },
