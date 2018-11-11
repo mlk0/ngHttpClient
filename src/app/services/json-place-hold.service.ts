@@ -62,7 +62,7 @@ export class JsonPlaceHoldService {
     }
     else {
       console.log('SERVER SIDE Error status ' + error.status);
-      // console.log(`server error body ${JSON.stringify(error.error)}`);
+      console.log(`SERVER SIDE Message ${JSON.stringify(error)}`);
     }
 
     //it seems that ErrorObservable is no loger supported
